@@ -3,16 +3,13 @@ package com.example.SpringJDBC;
 import java.util.List;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.ApplicationContext;
 
 import com.example.SpringJDBC.model.Student;
 import com.example.SpringJDBC.service.StudnetService;
 
 @SpringBootApplication
-@EnableAutoConfiguration (exclude = {DataSourceAutoConfiguration.class})
 public class SpringJdbcApplication {
 
 	public static void main(String[] args) {
@@ -22,6 +19,8 @@ public class SpringJdbcApplication {
 		Student sc=context.getBean(Student.class);
 
 		StudnetService scService=context.getBean(StudnetService.class);
+
+		
 
 		scService.addStudent(sc);
 

@@ -23,7 +23,7 @@ public class StudnetService {
     }
 
     public  void addStudent(Student student) {
-        repo.save();
+        repo.save(student);
     }
 
     public List<Student> getStudentList() {
