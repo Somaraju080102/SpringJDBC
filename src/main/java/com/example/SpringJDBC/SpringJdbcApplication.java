@@ -17,21 +17,20 @@ public class SpringJdbcApplication {
 	 ApplicationContext context=SpringApplication.run(SpringJdbcApplication.class, args);
 
 		Student sc=context.getBean(Student.class);
-
+		sc.setId(100);
+		sc.setName("Soma");
+		sc.setMarks(22);
 		StudnetService scService=context.getBean(StudnetService.class);
 
-		
 
 		scService.addStudent(sc);
 
 		List<Student> students = scService.getStudentList();
 
-		System.out.println(students);
-
-		sc.setId(100);
-		sc.setName("Soma");
-		sc.setMarks(22);
-		
+		for(Student student : students){
+			System.out.println(student.getName()+" "+student.getId()+" "+student.getMarks());
+		}
+	
 	}
 
 }
